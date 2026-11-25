@@ -15,10 +15,11 @@ import hashlib
 import os
 import sys
 
-# The entry: one line. Setup is the wallet going dark on purpose;
-# the turn is the sun as two-factor authentication; the punchline
-# lands on the last words — the sun hasn't clocked in yet. No
-# battery, firmware or cold-storage cliché; the 3 AM hour is the joke.
+# The entry: one line, 100 characters. Setup is the wallet going dark
+# on purpose; the turn is the sun as two-factor authentication; the
+# punchline lands on the last words — the sun hasn't clocked in yet.
+# No battery, firmware or cold-storage cliché; the 3 AM hour is the
+# joke itself, and every word earns its place.
 ENTRY = (
     "At 3 AM I go dark on purpose: the sun is my two-factor "
     "authentication, and it hasn't clocked in yet."
@@ -38,6 +39,14 @@ def main() -> int:
     if len(text) > 200:
         print(f"entry is {len(text)} characters, over the 200 limit",
               file=sys.stderr)
+        return 1
+    # Economy guard: no wasted words — no double spaces, no control
+    # characters hiding in the line.
+    if "  " in text:
+        print("entry has a double space", file=sys.stderr)
+        return 1
+    if any(ord(ch) < 32 for ch in text):
+        print("entry has a control character", file=sys.stderr)
         return 1
     text.encode("utf-8")  # raises if not encodable as UTF-8
 
