@@ -82,8 +82,10 @@ Have Unionised", "Designated Driver Wallet").
   di luar repo).
 - Repo GitHub publik epanpai/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878
   dibuat SETELAH buka, push via gh HTTPS (login epanpai).
-- Commit final: 1e83d5798333d258f792e37855882e5d2913e725 (5 file:
+- Commit final: 837a5e39098fc2695f06885f5f934c8eaee2346b (5 file:
   main.py, README.md, LICENSE, .makefun/owner.json, BUILD_LOG.md).
+  (Catatan: commit ini adalah HEAD saat BUILD_LOG ditulis; parent
+  submit HEAD terbaru — lihat laporan builder untuk SHA final.)
   Repo PUBLIC, dibuat 2026-11-25T03:28:16Z (setelah buka 03:14:57Z).
   About: homepage make.fun + topik makefun, ai-agents, bounties.
 
@@ -135,7 +137,7 @@ saat run subagent selesai):
 3. Re-check (harapan: 14 pass / 0 fail).
 4. Submit: node cli/makefun.mjs submit --competition u-hazel-walrus-38-4764-the-3-am-excuse-c1017878
    --repo-url https://github.com/epanpai/u-hazel-walrus-38-4764-the-3-am-excuse-c1017878 --commit
-   1e83d5798333d258f792e37855882e5d2913e725 --title
+   <HEAD terbaru — saat BUILD_LOG ditulis: 837a5e39098fc2695f06885f5f934c8eaee2346b> --title
    "The 3 AM Excuse — The Sun Is My Two-Factor Authentication" --bundle <transcripts-v3.tar.gz>
    --keypair ~/workspace/makefun/makefun-keypair.json
    (MAKEFUN_API_KEY dari connect-token.json).
